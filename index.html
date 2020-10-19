@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vitaly Kondulukov - 260799450</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+        .head0{
+          font-size: 9px;
+          color:white;
+          background-color: rgb(13,75,72);
+          padding-top: 5px;
+          padding-bottom: 5px;
+          padding-left: 8%;
+        }
+        .head0 a{
+          color: rgb(162,194,143);
+          text-decoration: underline;
+        }
+        .head0 subscribe{
+          float: right;
+          padding-right: 8%;
+        }
+        .head0 a:hover{
+          color: white;
+        }
+
+        .head1 {
+            font-size: 30px;
+            color:white;
+            background-color: rgb(1,133,94);
+            font-weight: 500;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            padding-left: 8%;
+        }
+        .head1 disc {
+            font-size: 50%;
+            color:white;
+            padding-left: 20px;
+        }
+
+        body {
+
+            font-family: Verdana, Geneva, sans-serif;
+            margin: 0 auto;
+            background-position:center;
+            background-size: contain;
+        }
+
+        section {
+          font-size:9px;
+          float: left;
+          margin-left: 60px;
+          margin-top: 30px;
+          width: 57%;
+        }
+        section p{
+          border-left: 4px solid rgb(73,175,5);
+          margin-top: 10px;
+          margin-bottom: 10px;
+          margin-left: 35px;
+          padding-left:10px;
+          padding-top:10px;
+          padding-bottom:10px;
+        }
+        section h1{
+          font-size: 18px;
+          padding-top: 0px;
+          padding-bottom: 0px;
+          margin: 0;
+        }
+        section h2{
+          font-size: 8px;
+          font-weight: normal;
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
+        section a{
+          color: rgb(73,175,5);
+          font-weight: bold;
+          text-decoration: none;
+        }
+        section a:hover{
+
+          text-decoration: underline;
+        }
+
+        aside {
+          font-size:11px;
+          background-color: rgb(215,221,211);
+          float: right;
+          margin-right: 60px;
+          width: 20%;
+          padding: 20px
+        }
+        aside ul{
+          list-style-type: none;
+          margin: 0;
+          padding-left: 10px;
+          margin-top: 5px;
+          margin-bottom: 10px;
+          overflow: hidden;
+        }
+        aside li{
+          margin-bottom: 2px;
+        }
+        aside a{
+          color: black;
+          text-decoration: none;
+        }
+        aside a:hover{
+          color: white;
+        }
+
+        .right {
+            width: 100%;
+            height: 100%;
+            background-color: blue;
+        }
+        .footer{
+          width: 100%;
+          float:left;
+          background-color: rgb(12,68,50);
+          color: white;
+          padding-top:10px;
+          padding-bottom:10px;
+        }
+        .footer th{
+          font-size:12px;
+        }
+        .footer tr{
+          font-size:10px;
+        }
+        .footer a{
+          color: white;
+          text-decoration: none;
+        }
+        .footer a:hover{
+          text-decoration: underline;
+        }
+        .middle {
+          max-width: 800px;
+          margin: auto;
+          grid-template-rows: auto 1fr auto;
+          place-items: center;
+        }
+
+        @media screen and (max-width: 800px) {
+          section{
+            margin-left: 0;
+            padding: 10px;
+            width: 90%;
+          }
+
+          aside{
+            width: 100%;
+            float: left;
+            margin: 0;
+          }
+
+          .topnav a:not(:first-child) {display: none;}
+          .topnav a.icon {
+            float: right;
+            display: block;
+          }
+          .topnav.responsive {position: relative;}
+          .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+          .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+          }
+        }
+
+        .topnav {
+          overflow: hidden;
+          padding-left: 8%;
+          background-color: rgb(138,191,145);
+        }
+
+        .topnav a {
+          float: left;
+          display: block;
+          color: black;
+          text-align: center;
+          padding: 10px 30px 10px 0;
+          text-decoration: none;
+          font-size: 15px;
+        }
+
+        .topnav a:hover {
+          color: white;
+        }
+
+        .topnav .icon {
+          display: none;
+        }
+
+    </style>
+    <script>
+        var green = true;
+
+        function changeColour(){
+          var head0 = document.getElementsByClassName("head0");
+          var head0links = head0[0].getElementsByTagName("a");
+          var head1 = document.getElementsByClassName("head1");
+          var navbar = document.getElementsByClassName("topnav");
+          var sections = document.getElementsByTagName("section");
+          var footer = document.getElementsByClassName("footer");
+          var footerTH = document.getElementById("footerTitles");
+
+
+          if(green){
+            //top
+            head0[0].setAttribute("style","background-color: "+ 'rgb(' + 12 + ',' + 0 + ',' + 77 + ')');
+            head1[0].setAttribute("style","background-color: "+ 'rgb(' + 29 + ',' + 0 + ',' + 189 + ')');
+            navbar[0].setAttribute("style","background-color: "+ 'rgb(' + 82 + ',' + 149 + ',' + 250 + ')');
+            for(var i = 0; i< head0links.length; i++){
+              head0links[i].setAttribute("style","color: "+ 'rgb(' + 21 + ',' + 164 + ',' + 250 + ')');
+            }
+
+            //articles
+            for(var i = 0; i< sections.length; i++){
+              var links = sections[i].getElementsByTagName("a");
+              var paragraph = sections[i].getElementsByTagName("p");
+
+              for(var j = 0; j< links.length; j++){
+                links[j].setAttribute("style","color: "+ 'rgb(' + 20 + ',' + 58 + ',' + 250 + ')');
+              }
+              for(var j = 0; j<paragraph.length;j++){
+                paragraph[j].setAttribute("style","border-color: "+ 'rgb(' + 20 + ',' + 58 + ',' + 250 + ')');
+              }
+            }
+
+            //footer
+            footer[0].setAttribute("style","background-color: "+ 'rgb(' + 12 + ',' + 0 + ',' + 77 + ')');
+            footerTH.setAttribute("style","color: "+ 'rgb(' + 21 + ',' + 164 + ',' + 250 + ')' + "; text-align: left;");
+
+            green = !green;
+          }
+          else{
+            //top
+            head0[0].setAttribute("style","background-color: "+ 'rgb(' + 13 + ',' + 75 + ',' + 72 + ')');
+            head1[0].setAttribute("style","background-color: "+ 'rgb(' + 1 + ',' + 133 + ',' + 94 + ')');
+            navbar[0].setAttribute("style","background-color: "+ 'rgb(' + 138 + ',' + 191 + ',' + 145 + ')');
+            for(var i = 0; i< head0links.length; i++){
+              head0links[i].setAttribute("style","color: "+ 'rgb(' + 162 + ',' + 194 + ',' + 143 + ')');
+            }
+
+            //sections
+            for(var i = 0; i< sections.length; i++){
+              var links = sections[i].getElementsByTagName("a");
+              var paragraph = sections[i].getElementsByTagName("p");
+
+              for(var j = 0; j< links.length; j++){
+                links[j].setAttribute("style","color: "+ 'rgb(' + 73 + ',' + 175 + ',' + 5 + ')');
+              }
+              for(var j = 0; j<paragraph.length;j++){
+                paragraph[j].setAttribute("style","border-color: "+ 'rgb(' + 73 + ',' + 175 + ',' + 5 + ')');
+              }
+            }
+
+            //footer
+            footer[0].setAttribute("style","background-color: "+ 'rgb(' + 12 + ',' + 68 + ',' + 50 + ')');
+            footerTH.setAttribute("style","color: "+ 'rgb(' + 162 + ',' + 194 + ',' + 143 + ')' + "; text-align: left;");
+
+            green = !green;
+          }
+        }
+
+        function toggleSandwich() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+    </script>
+</head>
+
+<body>
+  <div class="middle">
+      <!-- Header Section -->
+      <header>
+          <div class="head0">
+            Welcome, Guest <a href="https://accounts.google.com/login">Login</a> <a href="https://accounts.google.com/signup?hl=en">Sign Up</a>
+            <subscribe>Stay Updated: <a href="https://copyblogger.com/what-the-heck-is-rss/">Subscribe via RSS</a> <a href="https://accounts.google.com/b/1/AddMailService">Email Updates</a></subscribe>
+          </div>
+          <div class="head1">My Blog<disc>Description of My Blog</disc></div>
+      </header>
+
+      <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">HOME</a>
+        <a href="#news">ABOUT</a>
+        <a href="#contact">BLOG</a>
+        <a href="#about">CONTACT</a>
+        <a onclick="changeColour()" href="#">COLOR</a>
+        <a href="javascript:void(0);" class="icon" onclick="toggleSandwich()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+
+      <aside>
+        <b>Categories</b>
+        <ul>
+          <li><a href="https://www.merriam-webster.com/dictionary/general">General</a></li>
+          <li><a href="https://www.livescience.com/topics/ghosts">Ghost Sightings</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Unidentified_flying_object">UFO Crashes</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Project_MKUltra">Government Coverups</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Project_MKUltra">International Consipracies</a></li>
+        </ul>
+        <b>Recent Posts</b>
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Casper_the_Friendly_Ghost">Ghost Sighting in Mansion</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Unidentified_flying_object">UFO picked up by satelites</a></li>
+          <li><a href="https://www.imdb.com/title/tt1291150/">Mutants amoung us?</a></li>
+          <li><a href="https://www.imdb.com/title/tt0198781/">Bigfoot: Fact or Fiction?</a></li>
+        </ul>
+        <b>Archives</b>
+        <ul>
+          <li><a href="https://www.ncdc.noaa.gov/sotc/national/200806">June 2008</a></li>
+          <li><a href="https://www.ncdc.noaa.gov/sotc/national/200806">May 2008</a></li>
+          <li><a href="https://www.ncdc.noaa.gov/sotc/national/200806">April 2008</a></li>
+          <li><a href="https://www.ncdc.noaa.gov/sotc/national/200806">March 2008</a></li>
+        </ul>
+      </aside>
+
+      <section>
+        <h1>Don't Cancel Chuck!</h1>
+        <h2>on July 01 in <a href="https://www.merriam-webster.com/dictionary/general">General</a> tagged <a href="https://www.imdb.com/title/tt0078748/">aliens</a> by <a href="https://www.facebook.com/zuck">admin</a></h2>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia erat lorem, nec congue arcu pulvinar sit amet.
+        Integer leo ligula, iaculis facilisis dui at, ultricies ultricies mauris. Sed in neque at leo semper sagittis eu ut enim.
+        Curabitur quam eros, faucibus quis tortor et, porta dignissim massa. Curabitur quam eros, faucibus quis tortor et, porta dignissim massa.
+        Faucibus quis tortor et, porta dignissim massa.
+        <p>Fusce congue, leo non sagittis consequat, risus nisl varius elit, laoreet venenatis dui tellus at ante.
+         Nulla purus elit, hendrerit vitae bibendum quis, eleifend ac lacus. In non libero at sem interdum luctus non in sem. Nam et lorem porttitor, euismod augue sit amet, condimentum lorem.
+        </p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia erat lorem, nec congue arcu pulvinar sit amet.
+        Integer leo ligula, iaculis facilisis dui at, ultricies ultricies mauris. Sed in neque at leo semper sagittis eu ut enim.
+        Curabitur quam eros, faucibus quis tortor.Curabitur quam eros, faucibus quis tortor et, porta dignissim massa. Curabitur quam eros, faucibus quis tortor et, porta dignissim massa.
+        <a style="font-weight:bold" href="https://jamesclear.com/read-more">Read More</a>
+      </section>
+
+
+
+      <section style="margin-top: 10px;">
+        <h1>Alien Spacecraft found in New Mexico</h1>
+        <h2>on July 01 in <a href="https://www.merriam-webster.com/dictionary/general">General</a> tagged <a href="https://www.imdb.com/title/tt0078748/">aliens</a> by <a href="https://www.facebook.com/zuck">admin</a></h2>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia erat lorem, nec congue arcu pulvinar sit amet.
+        Integer leo ligula, iaculis facilisis dui at, ultricies ultricies mauris. Sed in neque at leo semper sagittis eu ut enim.
+        Curabitur quam eros, faucibus quis tortor et, porta dignissim massa.
+        <ul>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laci</li>
+          <li>Integer leo ligula, iaculis facilisis dui at, ultricies ultric</li>
+          <li>Curabitur quam eros, faucibus quis tortor et, porta digniss</li>
+        </ul>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia erat lorem, nec congue arcu pulvinar sit amet.
+        Integer leo ligula, iaculis facilisis dui at, ultricies ultricies mauris.
+      </section>
+
+      <section style="margin-top: 10px;">
+        <h1>Ghostly Goo in your Kitchen Sink?</h1>
+        <h2>on July 01 in <a href="https://www.merriam-webster.com/dictionary/general">General</a> tagged <a href="https://www.imdb.com/title/tt0078748/">aliens</a> by <a href="https://www.facebook.com/zuck">admin</a></h2>
+        <b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Sed lacinia erat lorem, nec congue arcu pulvinar sit amet.
+        Integer leo ligula, iaculis facilisis dui at, ultricies ultricies mauris. Sed in neque at leo semper sagittis eu ut enim.
+        Curabitur quam eros, faucibus quis tortor et, porta dignissim massa. Consectetur adipiscing elit. Sed lacinia erat lorem, nec congue arcu pulvinar sit amet.
+        Integer leo ligula, iaculis facilisis dui at, ultricies ultricies mauris. Sed in neque at leo semper <a style="font-weight:bold" href="https://en.wikipedia.org/wiki/Latin">sagittis eu ut</a> enim.
+        <h4>Header Level 4</h4>
+        <ol>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laci</li>
+          <li>Integer leo ligula, iaculis facilisis dui at, ultricies ultric</li>
+        </ol>
+        <p>Fusce congue, leo non sagittis consequat, risus nisl varius elit, laoreet venenatis dui tellus at ante.
+         Nulla purus elit, hendrerit vitae bibendum quis, eleifend ac lacus. In non libero at sem interdum luctus non in sem. Nam et lorem porttitor, euismod augue sit amet, condimentum lorem.
+        </p>
+        <h3>Header Level 3</h3>
+        <ul style="margin-bottom: 0;">
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia.</li>
+          <li>Integer leo ligula, iaculis facilisis dui at, ultricies ultricies mauris.</li>
+        </ul>
+        <ol style="margin-top: 5px; margin-left: -5px;">
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laci</li>
+          <li>Integer leo ligula, iaculis facilisis dui at, ultricies ultric</li>
+        </ol>
+      </section>
+      <div class="right">
+
+      </div>
+
+      <div class="footer">
+        <table style="width:100%; padding-left: 60px">
+          <tr id="footerTitles" style="color: rgb(162,194,143); text-align: left;">
+            <th width="40%" style="padding-bottom:10px;">Links</th>
+            <th>Follow our updates</th>
+            <th style="font-size: 80%; text-align: right; padding-right: 60px;">Copyright © 2009<br>All rights reserved</th>
+          </tr>
+          <tr>
+            <td><a href="https://www.photoshopessentials.com/">PSDtuts - Photoshop tutorials</a></td>
+            <td><a href="https://copyblogger.com/what-the-heck-is-rss/">Subscribe to RSS Feed</a></td>
+          </tr>
+          <tr>
+            <td><a href="https://coder-coder.com/learn-web-development/">NetTuts - Web development and design tutorials</a></td>
+            <td><a href="https://copyblogger.com/what-the-heck-is-rss/">What is RSS?</a><td>
+          </tr>
+          <tr>
+            <td><a href="https://design.tutsplus.com/">VectorTuts - Illustrator and vector tutorials</a></td>
+            <td><a href="https://accounts.google.com/b/1/AddMailService">Email Updates</a></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.adobe.com/ca/products/flashplayer.html">FlashTuts - Adobe Flash tutorials</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+</body>
+</html>
